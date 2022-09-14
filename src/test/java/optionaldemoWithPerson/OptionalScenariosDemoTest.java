@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-class OptionalScenariosDemo {
+class OptionalScenariosDemoTest {
 
     List<Person> people = List.of(
             new Person("Jack", 15),
@@ -26,7 +26,7 @@ class OptionalScenariosDemo {
 
     @Test
     //Given a list of persons, get the person's age with name as jack
-    public void getAgeOfPersonThatExistsInTheList() {
+    public void getAgeOfSpecificPerson() {
         int age = people.stream()
                 .filter(e -> e.getName().equalsIgnoreCase("jack"))
                 .findFirst()
@@ -38,7 +38,7 @@ class OptionalScenariosDemo {
 
     @Test
     //Given a list of persons, get the person's age with name as jack
-    public void getAgeOfPersonThatDOesNotExistInTheList() {
+    public void getAgeOfNonExistingPerson() {
         int age = people.stream()
                 .filter(e -> e.getName().equalsIgnoreCase("jacke"))
                 .findFirst()
