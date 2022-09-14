@@ -3,6 +3,7 @@ package optionaldemoone;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DiscountServiceTest {
@@ -16,6 +17,7 @@ class DiscountServiceTest {
         DiscountService service = new DiscountService();
         String discountLine = service.getDiscountLine(new Customer("Jack", new MemberCard(100)));
         System.out.println(discountLine);
+        assertThat(discountLine).isEqualTo("Jack gets Discount% 10");
     }
 
     @Test
@@ -25,6 +27,7 @@ class DiscountServiceTest {
         DiscountService service = new DiscountService();
         String discountLine = service.getDiscountLine(new Customer("Sara", new MemberCard(50)));
         System.out.println(discountLine);
+        assertThat(discountLine).isEqualTo("Sara gets Discount% 5");
     }
 
     @Test
@@ -34,6 +37,7 @@ class DiscountServiceTest {
         DiscountService service = new DiscountService();
         String discountLine = service.getDiscountLine(new Customer("Matt", new MemberCard(10)));
         System.out.println(discountLine);
+        assertThat(discountLine).isEqualTo("Matt gets Discount% 0");
     }
 
     @Test
@@ -43,5 +47,6 @@ class DiscountServiceTest {
         DiscountService service = new DiscountService();
         String discountLine = service.getDiscountLine(new Customer("Bill"));
         System.out.println(discountLine);
+        assertThat(discountLine).isEqualTo("Bill gets Discount% 0");
     }
 }

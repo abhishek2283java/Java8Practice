@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class OptionalScenariosDemoTest {
 
@@ -34,10 +35,11 @@ class OptionalScenariosDemoTest {
                 .orElse(0);
 
         System.out.println("age = " + age);
+        assertThat(age).isEqualTo(15);
     }
 
     @Test
-    //Given a list of persons, get the person's age with name as jack
+    //Given a list of persons, get the person's age for a person not existing in the list
     public void getAgeOfNonExistingPerson() {
         int age = people.stream()
                 .filter(e -> e.getName().equalsIgnoreCase("jacke"))
@@ -46,6 +48,7 @@ class OptionalScenariosDemoTest {
                 .orElse(0);
 
         System.out.println("age = " + age);
+        assertThat(age).isEqualTo(0);
     }
 
     @Test
@@ -68,5 +71,6 @@ class OptionalScenariosDemoTest {
                 .collect(toList());
 
         System.out.println("collect1 = " + collect1);
+        assertThat(collect).containsExactlyInAnyOrder(15, 20);
     }
 }
