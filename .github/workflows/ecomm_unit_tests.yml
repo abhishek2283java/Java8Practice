@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Ecommerce - Run Sanity Tests
+name: Ecommerce - Run Unit Tests
 
 # Controls when the workflow will run
 on:
