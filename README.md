@@ -1,7 +1,8 @@
 
-# Java 8 Optional Class
-
+# Java 8 Optional Class demo
 Exploring Java 8 Optional Class
+
+## Demonstrate GitHub Actions to run the workflow
 
 ## Maven Tip to run tagged test cases
 - Tests are expressed via Scenarios in Feature files written in Gherkin.  
